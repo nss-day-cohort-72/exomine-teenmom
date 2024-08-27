@@ -31,6 +31,7 @@ export const marketplace = async () => {
 
         <article class="space-cart">
         <h2>Space Cart</h2>
+        <section class='minerals-in-cart'></section>
         ${purchaseButton}
         </article>
     `
