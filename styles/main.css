@@ -50,6 +50,11 @@ body {
     min-width: 400px;
     text-align: center;
   }
+
+  .facility-radio-buttons {
+    display: flex;
+    justify-content: center;
+  }
   
   .colony-minerals h2,
   .facility-minerals h2,
