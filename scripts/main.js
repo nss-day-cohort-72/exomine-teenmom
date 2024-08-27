@@ -1,10 +1,10 @@
-import { setFacility } from "./TransientState.js";
+// import { setFacility } from "./TransientState.js";
 import { marketplace } from "./marketplace.js"
 
 const mainContainer = document.querySelector("#container")
 
-export const render = () => {
-    mainContainer.innerHTML = marketplace()
+export const render = async () => {
+    mainContainer.innerHTML = await marketplace()
 
 }
 
