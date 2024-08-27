@@ -1,10 +1,15 @@
 import { setGovernorId } from "./TransientState.js";
 
+const GovernorColonyHeader = async (changeEvent) => {
+    
+}
+
 const governorsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'governor') {
         let convertedValue = parseInt(target.value)
         setGovernorId(convertedValue)
+        GovernorColonyHeader()
         //Function to display change here?
     }
 }
