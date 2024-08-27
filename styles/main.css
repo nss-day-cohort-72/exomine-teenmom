@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  article {
+    margin: 20px 0;
+  }
+  
+  /* Layout */
+
+  .governor-colony {
+    display: flex;
+    align-items: center;
+  }
+
+  article.governor,
+  article.facility {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .colony-minerals {
+    border: 2px dotted #ccc;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 150px;
+    min-width: 300px;
+    min-height: 100px;
+    text-align: center;
+  }
+
+  .facility-minerals {
+    border: 2px dotted #ccc;
+    padding: 20px;
+    margin: 20px;
+    min-width: 400px;
+    text-align: center;
+  }
+  
+  .colony-minerals h2,
+  .facility-minerals h2,
+  .space-cart h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .space-cart {
+    border: 2px dotted #00b7c5;
+    padding: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 20px;
+    text-align: center;
+    max-width: 250px;
+    min-width: 200px;
+  }
+  
+  .facility-minerals {
+    border-color: #8338ec;
+  }
+  
+  /* Dropdown Styling */
+  select {
+    padding: 8px;
+    font-size: 1rem;
+    margin: 10px;
+    max-height: 50px;
+    min-height: 50px;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #f7f7f7;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Flexbox Layout for Main Sections */
+  .colony-minerals,
+  .facility-minerals,
+  .space-cart {
+    display: inline-block;
+    width: calc(33% - 40px); /* Adjust width based on padding and margin */
+    vertical-align: top;
+  }
+  
