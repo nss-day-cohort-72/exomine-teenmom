@@ -16,7 +16,7 @@ export const marketplace = async () => {
                 </article>
 
                 <article class="colony-minerals">
-                <h2>${"generate colony header"}</h2>
+                <h2 id="governorColonyHeading">Colony Minerals</h2>
                 </article>
             </div>
 

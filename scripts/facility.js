@@ -21,7 +21,7 @@ export const selectFacility = async () => {
   
     let facilitiesDropdown = `
          <section class='facilities'>
-            Choose a facility <select name='facility'>
+            Choose a facility: <select name='facility'>
                 ${facilities.map(facility => `<option name='${facility.name}' value='${facility.id}'>${facility.name}</option>`).join('')}
             </select>
         </section>
