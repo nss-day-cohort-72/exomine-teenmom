@@ -1,0 +1,25 @@
+ColonyId
+    Id
+    Name
+
+Governors
+    Id
+    IsActive
+    Name
+    ColonyId
+
+Facility
+    Id
+    IsActive
+    Name
+    MineralId
+
+Minerals
+    Id
+    Name
+
+SpaceCart
+    Id
+    MineralId
+    FacilityId
+
