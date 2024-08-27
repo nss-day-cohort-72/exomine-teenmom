@@ -1,10 +1,45 @@
 {
-    "minerals":[],
-    "govenors": [],
-    "colonies": [],
-    "facilities": [],
+    "minerals": [
+        { "id": 1, "name": "Iron" },
+        { "id": 2, "name": "Copper" },
+        { "id": 3, "name": "Gold" },
+        { "id": 4, "name": "Silver" },
+        { "id": 5, "name": "Platinum" }
+    ],
+    "governors": [
+        { "id": 1, "name": "Katrina Bahringer", "isActive": true, "colonyId": 1 },
+        { "id": 2, "name": "Leonard Heathcote", "isActive": false, "colonyId": 2 },
+        { "id": 3, "name": "Eliana Schmidt", "isActive": true, "colonyId": 3 },
+        { "id": 4, "name": "Ramon Boyle", "isActive": true, "colonyId": 1 },
+        { "id": 5, "name": "Leto Atreides", "isActive": true, "colonyId": 2 }
+
+    ],
+    "colonies": [
+        { "id": 1, "name": "Europa" },
+        { "id": 2, "name": "Titan" },
+        { "id": 3, "name": "Callisto" }
+    ],
+    "facilities": [
+        { "id": 1, "name": "Ganymede", "isActive": true},
+        { "id": 2, "name": "Enceladus", "isActive": false},
+        { "id": 3, "name": "Oberon", "isActive": true}, 
+        { "id": 4, "name": "Io", "isActive": true} 
+        
+    ],
+    "facilityMinerals": [
+        { "id": 1, "mineralId": 1, "facilityId": 1, "load": 31 },
+        { "id": 2, "mineralId": 2, "facilityId": 2, "load": 25 },
+        { "id": 3, "mineralId": 3, "facilityId": 3, "load": 40 },
+        { "id": 4, "mineralId": 4, "facilityId": 1, "load": 20 },
+        { "id": 5, "mineralId": 5, "facilityId": 2, "load": 15 },
+        { "id": 6, "mineralId": 2, "facilityId": 3, "load": 10 },
+        { "id": 7, "mineralId": 5, "facilityId": 1, "load": 5 },
+        { "id": 8, "mineralId": 4, "facilityId": 2, "load": 18 },
+        { "id": 9, "mineralId": 3, "facilityId": 3, "load": 22 }
+    ],
+
     "colonyMinerals": [],
-    "facilityMinerals": [],
+    
     "spaceCarts": []
     
 }
