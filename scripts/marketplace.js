@@ -25,8 +25,8 @@ export const marketplace = async () => {
         </article>
 
         <article class=facility-minerals>
-        <h2>${"generate facility mineral header"}</h2>
-        ${"generate radio buttons for minerals at each facility"}
+        <h2 id='facilityMineralsHeading'>Facility Minerals</h2>
+        <section class='facility-radio-buttons'></section>
         </article>
 
         <article class="space-cart">
