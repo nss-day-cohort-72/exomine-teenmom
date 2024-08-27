@@ -37,6 +37,6 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
 }
 
 export const FacilityMineralsHeader = (facilityName) => {
-    let facilityMinderalsHeadingId = document.querySelector('#facilityMineralsHeading')
-    facilityMinderalsHeadingId.innerHTML = `Facility Minerals for ${facilityName}`
+    let facilityMineralsHeadingId = document.querySelector('#facilityMineralsHeading')
+    facilityMineralsHeadingId.innerHTML = `Facility Minerals for ${facilityName}`
 }
