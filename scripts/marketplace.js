@@ -11,6 +11,7 @@ export const marketplace = async () => {
 
         <article class="governor">
         ${chooseGovernor}
+        ${chooseGovernor}
         </article>
 
         <article class="colony-minerals">
@@ -18,6 +19,7 @@ export const marketplace = async () => {
         </article>
 
         <article class="facility">
+        ${chooseFacility}
         ${chooseFacility}
         </article>
 
