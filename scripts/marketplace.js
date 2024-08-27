@@ -11,7 +11,6 @@ export const marketplace = async () => {
 
         <article class="governor">
         ${chooseGovernor}
-        ${chooseGovernor}
         </article>
 
         <article class="colony-minerals">
@@ -20,16 +19,16 @@ export const marketplace = async () => {
 
         <article class="facility">
         ${chooseFacility}
-        ${chooseFacility}
         </article>
 
         <article class=facility-minerals>
-        <h2>${"generate facility mineral header"}</h2>
-        ${"generate radio buttons for minerals at each facility"}
+        <h2 id='facilityMineralsHeading'>Facility Minerals</h2>
+        <section class='facility-radio-buttons'></section>
         </article>
 
         <article class="space-cart">
         <h2>Space Cart</h2>
+        <section class='minerals-in-cart'></section>
         ${"purchase minerals button"}
         </article>
     `

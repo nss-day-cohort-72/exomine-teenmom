@@ -1,12 +1,16 @@
 import { setFacilityId } from "./TransientState.js"
+import { FacilityMineralsHeader, FacilityMineralsRadioButtons } from "./mineral.js"
 
 const facilitiesEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'facility') {
         let convertedValue = parseInt(target.value)
+        let selectedFacility = target.options[target.selectedIndex]
+        let facilityName = selectedFacility.getAttribute('name')
+        let facilityId = selectedFacility.value
         setFacilityId(convertedValue)
-        //Function to display change here?
-        //Something like displayFacilityMinerals()
+        FacilityMineralsHeader(facilityName)
+        FacilityMineralsRadioButtons(facilityId, facilityName)
     }
 }
 
@@ -16,15 +20,14 @@ export const selectFacility = async () => {
 
   
     let facilitiesDropdown = `
-        <section class='facilities'>
-            <select name='facility'>
-                ${facilities.map(facility => `<option value='${facility.id}'>${facility.name}</option>`).join('')}
+         <section class='facilities'>
+            Choose a facility <select name='facility'>
+                ${facilities.map(facility => `<option name='${facility.name}' value='${facility.id}'>${facility.name}</option>`).join('')}
             </select>
         </section>
     `;
 
     document.addEventListener("change", facilitiesEventHandler);
-
     return facilitiesDropdown
 };
 
