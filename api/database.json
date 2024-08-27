@@ -1,4 +1,10 @@
 {
     "minerals":[],
-    "facilityMinerals": []
+    "govenors": [],
+    "colonies": [],
+    "facilities": [],
+    "colonyMinerals": [],
+    "facilityMinerals": [],
+    "spaceCarts": []
+    
 }
