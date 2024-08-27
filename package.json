@@ -1,0 +1,12 @@
+{
+  "name": "exomine-teenmom",
+  "version": "1.0.0",
+  "description": "This project has you building an application that lets governors of different colonies in our Solar System purchase minerals from various mining facilities that human have established.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
