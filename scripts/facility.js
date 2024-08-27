@@ -11,16 +11,20 @@ const facilitiesEventHandler = async (changeEvent) => {
 }
 
 export const selectFacility = async () => {
-    const response = await fetch("http://localhost:8088/facilities")
-    const facilities = await response.json()
-    document.addEventListener("change", facilitiesEventHandler)
-    let facilitiesMap = facilities.map(factility => {
-        return `
+    const response = await fetch("http://localhost:8088/facilities");
+    const facilities = await response.json();
+
+  
+    let facilitiesDropdown = `
         <section class='facilities'>
-            <select name='facility' value=${factility.id} /> ${factility.name}
+            <select name='facility'>
+                ${facilities.map(facility => `<option value='${facility.id}'>${facility.name}</option>`).join('')}
+            </select>
         </section>
-        `
-    }).join('')
-    return facilitiesMap
-}
+    `;
+
+    document.addEventListener("change", facilitiesEventHandler);
+
+    return facilitiesDropdown
+};
 
