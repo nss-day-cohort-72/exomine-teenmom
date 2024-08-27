@@ -1,11 +1,19 @@
 const state = {
-
+    "facilityId": 0,
+    "governorId": 0,
+    "mineralId": 0,
 }
 
-export const setFacility = (facilityId) => {
+export const setFacilityId = (facilityId) => {
     state.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+export const setGovernorId = (governorId) => {
+    state.selectedGovernor = governorId
+}
+export const setMineralId = (mineralId) => {
+    state.selectedMineral = mineralId
+}
+
 
 export const purchaseMineral = () => {
     /*
@@ -19,8 +27,5 @@ export const purchaseMineral = () => {
 
         Only the foolhardy try to solve this problem with code.
     */
-
-
-
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
