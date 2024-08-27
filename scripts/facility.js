@@ -13,6 +13,7 @@ const facilitiesEventHandler = async (changeEvent) => {
 export const selectFacility = async () => {
     const response = await fetch("http://localhost:8088/facilities")
     const facilities = await response.json()
+    console.log(facilities)
     document.addEventListener("change", facilitiesEventHandler)
     let facilitiesMap = facilities.map(factility => {
         return `

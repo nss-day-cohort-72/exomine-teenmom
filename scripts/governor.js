@@ -12,13 +12,14 @@ const governorsEventHandler = async (changeEvent) => {
 export const selectGovernor = async () => {
     const response = await fetch("http://localhost:8088/governors")
     const governors = await response.json()
+    console.log(governors)
     document.addEventListener("change", governorsEventHandler)
+    let selectBar = `<select name='governor'>`
     let governorsMap = governors.map(governor => {
         return `
-        <section class='governors'>
-            <select name='governor' value=${governor.id} /> ${governor.name}
-        </section>
+         <option value=${governor.id}>${governor.name}</option>
         `
     }).join('')
-    return governorsMap
+    let selectClose = `</select>`
+    return selectBar + governorsMap + selectClose
 }
