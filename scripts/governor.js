@@ -1,9 +1,5 @@
 import { setGovernorId } from "./TransientState.js";
 
-const GovernorColonyHeader = async (changeEvent) => {
-    
-}
-
 const governorsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'governor') {
