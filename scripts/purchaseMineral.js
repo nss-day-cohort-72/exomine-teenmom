@@ -1,4 +1,4 @@
-// import { purchaseMineral } from "./TransientState"
+import { purchaseMineral } from "./TransientState.js"
 
 export const purchaseMineralButton = () => {
     document.addEventListener(
@@ -8,8 +8,8 @@ export const purchaseMineralButton = () => {
     return `<button id="purchase">Purchase Mineral</button>`
 }
 
-const handlePurchaseClick = () => {
+const handlePurchaseClick = (clickEvent) => {
     if (clickEvent.target.id === "purchase") {
-        // purchaseMineral()
+        purchaseMineral()
     }
 }

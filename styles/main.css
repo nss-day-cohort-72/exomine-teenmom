@@ -17,9 +17,9 @@ body {
     color: #333;
   }
 
-  section {
+  /* section {
     min-width: 400px;
-  }
+  } */
   
   article {
     margin: 20px 0;
@@ -36,6 +36,7 @@ body {
   article.facility {
     display: flex;
     margin-bottom: 20px;
+    min-width: 400px;
   }
   
   .colony-minerals {
