@@ -1,4 +1,4 @@
-import { setGovernorId } from "./TransientState.js";
+import { setColonyId, setGovernorId } from "./TransientState.js";
 
 const governorsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
@@ -7,6 +7,7 @@ const governorsEventHandler = async (changeEvent) => {
         let selectedGovernor = target.options[target.selectedIndex]
         let colonyId = parseInt(selectedGovernor.dataset.colonyid)
         setGovernorId(convertedValue)
+        setColonyId(colonyId)
         GovernorColonyHeader(colonyId)
         //Function to display change here?
     }
