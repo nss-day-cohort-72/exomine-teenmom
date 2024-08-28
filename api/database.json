@@ -100,7 +100,7 @@
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "load": 99
+      "load": 98
     },
     {
       "id": 3,
@@ -146,6 +146,15 @@
     }
   ],
   "colonyMinerals": [
+    {
+      "facilityId": 2,
+      "governorId": 3,
+      "mineralId": 2,
+      "colonyId": 3,
+      "load": 1,
+      "facilityMineralId": 2,
+      "id": 1
+    }
   ],
   "spaceCarts": []
 }
