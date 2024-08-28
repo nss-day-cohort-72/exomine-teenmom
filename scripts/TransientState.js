@@ -3,7 +3,7 @@ export const state = {
     "governorId": 0,
     "mineralId": 0,
     "colonyId": 0,
-    "load": 0
+    "load": 0,
     "colonyId": 0,
     "facilityMineralId": 0
 }
@@ -33,8 +33,6 @@ export const setLoad = (load) => {
     console.log(state)
 }
 
-    console.log(state)
-}
 export const setFacilityMineralId = (facilityMineralId) => {
     state.facilityMineralId = facilityMineralId
     console.log(state)
@@ -99,7 +97,7 @@ export const purchaseMineral = async () => {
 
 
     
-}
+
 
 
 
