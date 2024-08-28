@@ -1,11 +1,13 @@
 import { selectGovernor } from "./governor.js"
 import { selectFacility } from "./facility.js"
 import { purchaseMineralButton } from "./purchaseMineral.js"
+import { colonyMineralsList } from "./colony.js"
 
 export const marketplace = async () => {
     const chooseGovernor = await selectGovernor()
     const chooseFacility = await selectFacility()
     const purchaseButton = purchaseMineralButton()
+    const colonyHTML = await colonyMineralsList()
     return `
         <header class="header">
         <h1 class="title">Solar System Mining Marketplace</h1>
@@ -17,6 +19,7 @@ export const marketplace = async () => {
 
                 <article class="colony-minerals">
                 <h2 id="governorColonyHeading">Colony Minerals</h2>
+                <div>${colonyHTML}</div>
                 </article>
             </div>
 

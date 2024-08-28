@@ -3,7 +3,9 @@ export const state = {
     "governorId": 0,
     "mineralId": 0,
     "colonyId": 0,
-    "load": 0
+    "load": 0,
+    "colonyId": 0,
+    "facilityMineralId": 0
 }
 
 export const setFacilityId = (facilityId) => {
@@ -29,62 +31,92 @@ export const setLoad = (load) => {
     console.log(state)
 }
 
+export const setFacilityMineralId = (facilityMineralId) => {
+    state.facilityMineralId = facilityMineralId
+    console.log(state)
+}
+
 
 
 export const purchaseMineral = async () => {
-    //const existingObject = state.find(obj => obj.id === colonyMinerals.id)
-    let test = 'tester'
-    const colonyMineralsResponse = await fetch(`http://localhost:8088/colonyMinerals`)
-    const facilityMineralsResponse = await fetch(`http://localhost:8088/facilityMinerals/`)
-    const colonyMinerals = colonyMineralsResponse.json()
-    const facilityMinerals = facilityMineralsResponse.json()
+    let allFacilityMinerals = await AllFacilityMinerals()
+    let allColonyMinerals = await AllColonyMinerals()
+    let chosenFacilityMineral = allFacilityMinerals.find(mineral => mineral.id == state.facilityMineralId)
 
-    //for (const colonyMineral of colonyMinerals) {
-        
-    //}
+    for (const colonyMineral of allColonyMinerals) {
+        if (colonyMineral.mineralId == state.mineralId && colonyMineral.colonyId == state.colonyId) {
+            colonyMineral.load++
+            const putOptions = {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(colonyMineral)
+            }
+            const putResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyMineral.id}`, putOptions)
 
-    if (colonyMinerals && facilityMinerals) {
-        colonyMinerals.load += 1
-        facilityMinerals.load -= 1
-        
-        const postOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(state)
+            chosenFacilityMineral.load--
+            const putOptions2 = {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(chosenFacilityMineral)
+            }
+            const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
+            return
         }
-    
-        const postResponse = await fetch("http://localhost:8088/colonyMinerals", postOptions)
     }
     
-    // const putOptions = {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(state)
-    // }
+    state.load = 1
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(state)
+    }
+    const postResponse = await fetch(`http://localhost:8088/colonyMinerals/`, postOptions)
 
-    // if (state.load > 0) {
-    //     state.load -= 1
-
-    
-    // const putResponse = await fetch("http://localhost:8088/colonyMinerals", putOptions)
-
+    chosenFacilityMineral.load--
+    const putOptions2 = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(chosenFacilityMineral)
+    }
+    const putResponse = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
-/*
-        Does the chosen governor's colony already own some of this mineral?
-            - If yes, what should happen?
-            - If no, what should happen?
 
-        Defining the algorithm for this method is traditionally the hardest
-        task for teams during this group project. It will determine when you
-        should use the method of POST, and when you should use PUT.
-
-        Only the foolhardy try to solve this problem with code.
-    */
-
-
-    
+const AllFacilities = async () => {
+    const response = await fetch("http://localhost:8088/facilities")
+    const facilities = await response.json()
+    return facilities
+}
+const AllMinerals = async () => {
+    const response = await fetch("http://localhost:8088/minerals")
+    const minerals = await response.json()
+    return minerals
+}
+const AllGovernors = async () => {
+    const response = await fetch("http://localhost:8088/governors")
+    const governors = await response.json()
+    return governors
+}
+const AllColonies = async () => {
+    const response = await fetch("http://localhost:8088/colonies")
+    const colonies = await response.json()
+    return colonies
+}
+const AllFacilityMinerals = async () => {
+    const response = await fetch("http://localhost:8088/facilityMinerals")
+    const facilityMinerals = await response.json()
+    return facilityMinerals
+}
+const AllColonyMinerals = async () => {
+    const response = await fetch("http://localhost:8088/colonyMinerals")
+    const colonyMinerals = await response.json()
+    return colonyMinerals
+}
