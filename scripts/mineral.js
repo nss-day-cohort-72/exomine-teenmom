@@ -16,8 +16,8 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
     const mineralsResponse = await fetch("http://localhost:8088/minerals")
     const facilityMinerals = await response.json()
     const singleMinerals = await mineralsResponse.json()
-    console.log(facilityMinerals)
-    console.log(singleMinerals)
+    // console.log(facilityMinerals)
+    // console.log(singleMinerals)
 
     document.addEventListener("click", facilityMineralsEventHandler)
     let facilityMineralsElement = document.querySelector('.facility-radio-buttons')
@@ -26,7 +26,7 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
         if (mineral.facilityId === parseInt(facilityId)) {
             for (const singleMineral of singleMinerals) {
                 if (singleMineral.id === mineral.mineralId) {
-                    console.log(singleMineral, ' SINGLE MINERAL')
+                    // console.log(singleMineral, ' SINGLE MINERAL')
                     facilityMineralsElement.innerHTML += `
                     <input name='mineral' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
                     `

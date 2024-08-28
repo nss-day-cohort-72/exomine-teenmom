@@ -5,13 +5,16 @@ const state = {
 }
 
 export const setFacilityId = (facilityId) => {
-    state.selectedFacility = facilityId
+    state.facilityId = facilityId
+    console.log(state)
 }
 export const setGovernorId = (governorId) => {
-    state.selectedGovernor = governorId
+    state.governorId = governorId
+    console.log(state)
 }
 export const setMineralId = (mineralId) => {
-    state.selectedMineral = mineralId
+    state.mineralId = mineralId
+    console.log(state)
 }
 
 
