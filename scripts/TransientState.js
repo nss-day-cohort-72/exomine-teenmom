@@ -1,17 +1,17 @@
-const state = {
+export const state = {
     "facilityId": 0,
     "governorId": 0,
     "mineralId": 0,
 }
 
 export const setFacilityId = (facilityId) => {
-    state.selectedFacility = facilityId
+    state.facilityId = facilityId
 }
 export const setGovernorId = (governorId) => {
-    state.selectedGovernor = governorId
+    state.governorId = governorId
 }
 export const setMineralId = (mineralId) => {
-    state.selectedMineral = mineralId
+    state.mineralId = mineralId
 }
 
 

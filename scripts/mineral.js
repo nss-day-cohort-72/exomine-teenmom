@@ -1,8 +1,9 @@
-//FACILITY MINERALS
+import { setMineralId } from "./TransientState.js"
 
 const facilityMineralsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'mineral') {
+        setMineralId(parseInt(target.dataset.id))
         let mineralsInCart = document.querySelector('.minerals-in-cart')
         mineralsInCart.innerHTML = `
         1 ton of ${target.dataset.name} from ${target.dataset.facilityName}
@@ -16,8 +17,7 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
     const mineralsResponse = await fetch("http://localhost:8088/minerals")
     const facilityMinerals = await response.json()
     const singleMinerals = await mineralsResponse.json()
-    console.log(facilityMinerals)
-    console.log(singleMinerals)
+
 
     document.addEventListener("click", facilityMineralsEventHandler)
     let facilityMineralsElement = document.querySelector('.facility-radio-buttons')
@@ -28,7 +28,7 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
                 if (singleMineral.id === mineral.mineralId) {
                     console.log(singleMineral, ' SINGLE MINERAL')
                     facilityMineralsElement.innerHTML += `
-                    <input name='mineral' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
+                    <input name='mineral' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
                     `
                 }
             }
