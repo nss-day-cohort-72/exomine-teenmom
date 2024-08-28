@@ -1,4 +1,4 @@
-const state = {
+export const state = {
     "facilityId": 0,
     "governorId": 0,
     "mineralId": 0,
