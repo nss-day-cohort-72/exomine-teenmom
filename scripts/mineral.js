@@ -1,12 +1,11 @@
 import { setMineralId, setFacilityMineralId } from "./TransientState.js"
-import { setLoad, setMineralId } from "./TransientState.js"
+import { setLoad } from "./TransientState.js"
 
 const facilityMineralsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'mineral') {
         setMineralId(parseInt(target.dataset.id))
         setFacilityMineralId(parseInt(target.dataset.facilitymineralid))
-        console.log(target, 'TARGET')
         setLoad(parseInt(target.dataset.load))
         let mineralsInCart = document.querySelector('.minerals-in-cart')
         document.dispatchEvent(new CustomEvent("stateChanged"))
@@ -18,6 +17,7 @@ const facilityMineralsEventHandler = async (changeEvent) => {
 }
 
 export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => {
+    console.log('RADIO BUTTONS GENERATED')
     const response = await fetch("http://localhost:8088/facilityMinerals")
     const mineralsResponse = await fetch("http://localhost:8088/minerals")
     const facilityMinerals = await response.json()
@@ -33,8 +33,7 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
                 if (singleMineral.id === mineral.mineralId) {
                     // console.log(singleMineral, ' SINGLE MINERAL')
                     facilityMineralsElement.innerHTML += `
-                    <input name='mineral' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
-                    <input name='mineral' data-load="${mineral.load}"data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
+                    <input name='mineral' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
                     `
                 }
             }
