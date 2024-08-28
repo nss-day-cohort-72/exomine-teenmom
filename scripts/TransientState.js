@@ -2,17 +2,27 @@ export const state = {
     "facilityId": 0,
     "governorId": 0,
     "mineralId": 0,
+    "colonyId": 0,
+    "facilityMineralId": 0
 }
 
 export const setFacilityId = (facilityId) => {
     state.facilityId = facilityId
+    console.log(state)
 }
 export const setGovernorId = (governorId) => {
     state.governorId = governorId
+    console.log(state)
 }
 export const setMineralId = (mineralId) => {
     state.mineralId = mineralId
+    console.log(state)
 }
+export const setFacilityMineralId = (facilityMineralId) => {
+    state.facilityMineralId = facilityMineralId
+    console.log(state)
+}
+
 
 
 export const purchaseMineral = () => {
@@ -27,5 +37,7 @@ export const purchaseMineral = () => {
 
         Only the foolhardy try to solve this problem with code.
     */
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
+
+

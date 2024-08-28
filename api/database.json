@@ -36,10 +36,14 @@
         { "id": 7, "mineralId": 5, "facilityId": 1, "load": 5 },
         { "id": 8, "mineralId": 4, "facilityId": 2, "load": 18 },
         { "id": 9, "mineralId": 1, "facilityId": 3, "load": 22 },
-        { "id": 9, "mineralId": 3, "facilityId": 4, "load": 29 }
+        { "id": 10, "mineralId": 3, "facilityId": 4, "load": 29 }
     ],
 
-    "colonyMinerals": [],
+    "colonyMinerals": [
+        { "id": 1, "mineralId": 1, "colonyId": 1},
+        { "id": 1, "mineralId": 3, "colonyId": 1},
+        { "id": 1, "mineralId": 2, "colonyId": 1}
+    ],
     
     "spaceCarts": []
     
