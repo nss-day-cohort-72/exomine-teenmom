@@ -39,7 +39,9 @@
         { "id": 9, "mineralId": 3, "facilityId": 4, "load": 29 }
     ],
 
-    "colonyMinerals": [],
+    "colonyMinerals": [
+        { "id": 1, "mineralId": 1, "colonyId": 1 }
+    ],
     
     "spaceCarts": []
     

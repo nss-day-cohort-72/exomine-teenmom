@@ -1,10 +1,10 @@
 // import { purchaseMineral } from "./TransientState"
 
 export const purchaseMineralButton = () => {
-    document.addEventListener(
-        "click",
-        handlePurchaseClick
-    )
+    // document.addEventListener(
+    //     "click",
+    //     handlePurchaseClick
+    // )
     return `<button id="purchase">Purchase Mineral</button>`
 }
 

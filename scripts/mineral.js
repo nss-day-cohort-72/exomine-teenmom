@@ -26,7 +26,7 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
         if (mineral.facilityId === parseInt(facilityId)) {
             for (const singleMineral of singleMinerals) {
                 if (singleMineral.id === mineral.mineralId) {
-                    console.log(singleMineral, ' SINGLE MINERAL')
+                    // console.log(singleMineral, ' SINGLE MINERAL')
                     facilityMineralsElement.innerHTML += `
                     <input name='mineral' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facility-name=${facilityName} type='radio'>${mineral.load} tons of ${singleMineral.name}</input><br>
                     `
