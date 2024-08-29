@@ -1,19 +1,16 @@
-import { selectGovernor } from "./governor.js"
-import { selectFacility } from "./facility.js"
-import { purchaseMineralButton } from "./purchaseMineral.js"
-import { colonyMineralsList } from "./colony.js"
+import { createGovernorDropdown } from "./governor.js"
+import { createFacilitiesDropdown } from "./facility.js"
 
-export const marketplace = async () => {
-    const chooseGovernor = await selectGovernor()
-    // const chooseFacility = await selectFacility()
-    const purchaseButton = purchaseMineralButton()
+export const marketplace = () => {
+    const governorDropdownHTML = createGovernorDropdown()
+    const facilitiesDropdownHTML = createFacilitiesDropdown()
     return `
         <header class="header">
         <h1 class="title">Solar System Mining Marketplace</h1>
         </header>
             <div class="governor-colony">
                 <article class="governor">
-                ${chooseGovernor}
+                ${governorDropdownHTML}
                 </article>
 
                 <article class="colony-minerals">
@@ -22,17 +19,19 @@ export const marketplace = async () => {
                 </article>
             </div>
 
-        <article class="facility"></article>
+        <article class="facility">
+        ${facilitiesDropdownHTML}
+        </article>
 
         <article class=facility-minerals>
         <h2 id='facilityMineralsHeading'>Facility Minerals</h2>
-        <section class='facility-radio-buttons'></section>
+        <section class='facility-radio-buttons'>
+        </section>
         </article>
 
         <article class="space-cart">
         <h2>Space Cart</h2>
         <section class='minerals-in-cart'></section>
-        ${purchaseButton}
         </article>
     `
 }

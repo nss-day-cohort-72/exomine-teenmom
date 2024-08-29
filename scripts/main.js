@@ -1,18 +1,10 @@
-import { setFacilityId } from "./TransientState.js";
-import { marketplace } from "./marketplace.js"
+import { marketplace } from "./marketplace.js";
 
-const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#main-container")
+const marketplaceHTML = marketplace()
 
-export const render = async () => {
-    mainContainer.innerHTML = await marketplace()
+const render = () => {
+mainContainer.innerHTML = marketplaceHTML
 }
 
 render()
-
-// document.addEventListener("stateChanged", () => {
-//     render()
-// })
-
-// document.addEventListener("stateChanged", () => {
-//     window.alert('YAY')
-// })

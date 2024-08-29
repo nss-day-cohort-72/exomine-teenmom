@@ -38,6 +38,7 @@ body {
   article.governor,
   article.facility {
     display: flex;
+    align-items: center;
     margin-bottom: 20px;
     min-width: 400px;
   }
