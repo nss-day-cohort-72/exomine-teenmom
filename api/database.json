@@ -94,7 +94,7 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "load": 6
+      "load": 4
     },
     {
       "id": 2,
@@ -142,7 +142,7 @@
       "id": 9,
       "mineralId": 1,
       "facilityId": 3,
-      "load": 40
+      "load": 39
     },
     {
       "id": 10,
@@ -223,7 +223,7 @@
       "governorId": 1,
       "mineralId": 1,
       "colonyId": 1,
-      "load": 4,
+      "load": 7,
       "facilityMineralId": 1,
       "mineralName": "Iron",
       "id": 7

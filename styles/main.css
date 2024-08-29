@@ -6,7 +6,12 @@ body {
     padding: 0;
     background-color: #f7f7f7;
   }
-  
+  #container {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    text-align: center;
+  }
   .header {
     margin-bottom: 20px;
   }
@@ -30,9 +35,12 @@ body {
   width: 180px;
 }
 
-  .governor-colony {
+  .governor-colony,
+  .facilityMinerals-spaceCart {
     display: flex;
     align-items: center;
+    height: 300px;
+    margin-left: 200px
   }
 
   article.governor,
@@ -84,12 +92,17 @@ body {
     text-align: center;
     max-width: 250px;
     min-width: 200px;
+    position: relative;
+    left: 100px;
+    bottom: 10px;
   }
   
   .facility-minerals {
     border-color: #8338ec;
   }
-  
+  .facility {
+    margin-left: 200px;
+  }
   /* Dropdown Styling */
   select {
     padding: 8px;

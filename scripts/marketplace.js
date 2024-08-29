@@ -24,15 +24,17 @@ export const marketplace = async () => {
 
         <article class="facility"></article>
 
-        <article class=facility-minerals>
-        <h2 id='facilityMineralsHeading'>(choose a facility)</h2>
-        <section class='facility-radio-buttons'></section>
-        </article>
+        <article class='facilityMinerals-spaceCart'>
+            <article class='facility-minerals'>
+                <h2 id='facilityMineralsHeading'>(choose a facility)</h2>
+                <section class='facility-radio-buttons'></section>
+            </article>
 
-        <article class="space-cart">
-        <h2>Space Cart</h2>
-        <section class='minerals-in-cart'></section>
-        ${purchaseButton}
+            <article class="space-cart">
+                <h2>Space Cart</h2>
+                <section class='minerals-in-cart'></section>
+                ${purchaseButton}
+            </article>
         </article>
     `
 }
