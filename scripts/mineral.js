@@ -47,5 +47,12 @@ export const FacilityMineralsRadioButtons = async (facilityId, facilityName) => 
 
 export const FacilityMineralsHeader = (facilityName) => {
     let facilityMineralsHeadingId = document.querySelector('#facilityMineralsHeading')
-    facilityMineralsHeadingId.innerHTML = `Facility Minerals for ${facilityName}`
+    let facilityIsSelectedText = `Facility Minerals for ${facilityName}`
+    let facilityIsNotSelectedText = `(choose a facility)`
+    if (!facilityName) {
+        facilityMineralsHeadingId.innerHTML = facilityIsNotSelectedText
+    } else {
+        facilityMineralsHeadingId.innerHTML = facilityIsSelectedText
+
+    }
 }

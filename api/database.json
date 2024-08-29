@@ -43,7 +43,7 @@
     {
       "id": 4,
       "name": "Ramon Boyle",
-      "isActive": true,
+      "isActive": false,
       "colonyId": 1
     },
     {
@@ -94,7 +94,7 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "load": 8
+      "load": 6
     },
     {
       "id": 2,
@@ -118,13 +118,13 @@
       "id": 5,
       "mineralId": 5,
       "facilityId": 2,
-      "load": 10
+      "load": 6
     },
     {
       "id": 6,
       "mineralId": 2,
       "facilityId": 3,
-      "load": 1
+      "load": 0
     },
     {
       "id": 7,
@@ -223,10 +223,40 @@
       "governorId": 1,
       "mineralId": 1,
       "colonyId": 1,
-      "load": 2,
+      "load": 4,
       "facilityMineralId": 1,
       "mineralName": "Iron",
       "id": 7
+    },
+    {
+      "facilityId": 3,
+      "governorId": 1,
+      "mineralId": 2,
+      "colonyId": 1,
+      "load": 1,
+      "facilityMineralId": 6,
+      "mineralName": "Copper",
+      "id": 8
+    },
+    {
+      "facilityId": 2,
+      "governorId": 1,
+      "mineralId": 5,
+      "colonyId": 1,
+      "load": 3,
+      "facilityMineralId": 5,
+      "mineralName": "Platinum",
+      "id": 9
+    },
+    {
+      "facilityId": 2,
+      "governorId": 5,
+      "mineralId": 5,
+      "colonyId": 2,
+      "load": 1,
+      "facilityMineralId": 5,
+      "mineralName": "Platinum",
+      "id": 10
     }
   ],
   "spaceCarts": []

@@ -11,15 +11,20 @@ export const purchaseMineralButton = () => {
 const handlePurchaseClick = async (clickEvent) => {
     if (clickEvent.target.id === "purchase") {
         console.log(state.facilityMineralsTarget)
-        if (state.facilityMineralsTarget == undefined || !state.facilityMineralsTarget.checked) {
-            window.alert('No check! please check!')
-            return
-        }
+        console.log(state)
+        if (checkEveryFieldForSelection() === false) {return}
         await purchaseMineral()
         await removeChecked()
         await updateFacilityMineralsLoad()
         await clearSpaceCart()
         await updateColonyMinerals()
+    }
+}
+
+const checkEveryFieldForSelection = () => {
+    if (isNaN(state.facilityId) || isNaN(state.governorId) || state.facilityMineralsTarget == undefined || !state.facilityMineralsTarget.checked) {
+        window.alert('Please make a selection in each field before confirming your purchase.')
+        return false
     }
 }
 

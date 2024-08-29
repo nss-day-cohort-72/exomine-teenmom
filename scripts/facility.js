@@ -24,7 +24,12 @@ export const selectFacility = async () => {
          <section class='facilities'>
             Choose a facility: <select name='facility'>
             <option>Choose a facility</option>
-                ${facilities.map(facility => `<option name='${facility.name}' value='${facility.id}'>${facility.name}</option>`).join('')}
+                ${facilities.map(facility => {
+                    console.log(facility)
+                    if (facility.isActive) {
+                    return `<option name='${facility.name}' value='${facility.id}'>${facility.name}</option>`
+                    }
+                }).join('')}
             </select>
         </section>
     `;

@@ -25,7 +25,7 @@ export const marketplace = async () => {
         <article class="facility"></article>
 
         <article class=facility-minerals>
-        <h2 id='facilityMineralsHeading'>Facility Minerals</h2>
+        <h2 id='facilityMineralsHeading'>(choose a facility)</h2>
         <section class='facility-radio-buttons'></section>
         </article>
 
