@@ -25,10 +25,13 @@ export const selectGovernor = async () => {
     document.addEventListener("change", governorsEventHandler)
     let selectBar = `<section>Choose a governor: <select name='governor'> <option>Choose a governor</option>`
     let governorsMap = governors.map(governor => {
+        if (governor.isActive) {
         return `
          <option data-colonyId="${governor.colonyId}"value=${governor.id}>${governor.name}</option>
         `
+        }
     }).join('')
+    
     let selectClose = `</select></section>`
     return selectBar + governorsMap + selectClose
 }
