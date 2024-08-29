@@ -1,14 +1,14 @@
 import { createMineralRadioButtons } from "./mineral.js"
 
-const facilityResponse = await fetch("http://localhost:8088/facilities")
-const facilities = await facilityResponse.json()
-
 const facilityEventHandler = () => {
     createMineralRadioButtons()
 
 }
 
-export const createFacilitiesDropdown = () => {
+export const createFacilitiesDropdown = async () => {
+    const facilityResponse = await fetch("http://localhost:8088/facilities")
+    const facilities = await facilityResponse.json()
+
     const html = `<label for='facilities'>Choose a facility:</label>
     <select name='facilities'><option value="">Select a facility...</option>`
     let optionCounter = 1

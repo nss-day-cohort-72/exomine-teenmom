@@ -1,9 +1,9 @@
 import { createGovernorDropdown } from "./governor.js"
 import { createFacilitiesDropdown } from "./facility.js"
 
-export const marketplace = () => {
-    const governorDropdownHTML = createGovernorDropdown()
-    const facilitiesDropdownHTML = createFacilitiesDropdown()
+export const marketplace = async () => {
+    const governorDropdownHTML = await createGovernorDropdown()
+    const facilitiesDropdownHTML = await createFacilitiesDropdown()
     return `
         <header class="header">
         <h1 class="title">Solar System Mining Marketplace</h1>

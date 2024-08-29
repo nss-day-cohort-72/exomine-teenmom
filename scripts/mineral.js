@@ -1,9 +1,11 @@
-const mineralsResponse = await fetch("http://localhost:8088/minerals")
-const minerals = await mineralsResponse.json()
 
-const facilityRadioButtonsElement = document.querySelector("#facility-mineral-buttons")
 
-export const createMineralRadioButtons = () => {
+export const createMineralRadioButtons = async () => {
+    const facilityRadioButtonsElement = document.querySelector("#facility-mineral-buttons")
+
+    const mineralsResponse = await fetch("http://localhost:8088/minerals")
+    const minerals = await mineralsResponse.json()
+
     let optionCounter = 1
 
     const mineralRadioButtonElements = minerals.map(mineral => {

@@ -1,7 +1,8 @@
-const govResponse = await fetch("http://localhost:8088/governors")
-const governors = await govResponse.json()
+export const createGovernorDropdown = async () => {
 
-export const createGovernorDropdown = () => {
+    const govResponse = await fetch("http://localhost:8088/governors")
+    const governors = await govResponse.json()
+    
     const html = `<label for='governors'>Choose a governor:</label>
     <select name='governors'><option value="">Select a governor...</option>`
     let optionCounter = 1
