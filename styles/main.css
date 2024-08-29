@@ -26,6 +26,9 @@ body {
   }
   
   /* Layout */
+.governor select {
+  width: 180px;
+}
 
   .governor-colony {
     display: flex;
@@ -38,6 +41,8 @@ body {
     margin-bottom: 20px;
     min-width: 400px;
   }
+
+
   
   .colony-minerals {
     border: 2px dotted #ccc;

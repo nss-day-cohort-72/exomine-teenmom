@@ -12,3 +12,7 @@ render()
 // document.addEventListener("stateChanged", () => {
 //     render()
 // })
+
+// document.addEventListener("stateChanged", () => {
+//     window.alert('YAY')
+// })

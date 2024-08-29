@@ -5,9 +5,8 @@ import { colonyMineralsList } from "./colony.js"
 
 export const marketplace = async () => {
     const chooseGovernor = await selectGovernor()
-    const chooseFacility = await selectFacility()
+    // const chooseFacility = await selectFacility()
     const purchaseButton = purchaseMineralButton()
-    const colonyHTML = await colonyMineralsList()
     return `
         <header class="header">
         <h1 class="title">Solar System Mining Marketplace</h1>
@@ -19,13 +18,11 @@ export const marketplace = async () => {
 
                 <article class="colony-minerals">
                 <h2 id="governorColonyHeading">Colony Minerals</h2>
-                <div>${colonyHTML}</div>
+                <div id='colony-minerals-list'></div>
                 </article>
             </div>
 
-        <article class="facility">
-        ${chooseFacility}
-        </article>
+        <article class="facility"></article>
 
         <article class=facility-minerals>
         <h2 id='facilityMineralsHeading'>Facility Minerals</h2>
