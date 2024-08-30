@@ -50,7 +50,7 @@ export const displayGanymedeMinerals = async () => {
                     if (mineral.load > 0) {
                         console.log(mineral)
                         facilityMineralsArray.push(
-                            `<input data-type='mineral' name='${mineral.facilityId}' data-mineralid='${mineral.mineralId}' data-facilityid='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Ganymede' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
+                            `<input class='radio' data-type='mineral' name='${mineral.facilityId}' data-mineralid='${mineral.mineralId}' data-facilityid='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Ganymede' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
                         )
                     }
                 }
@@ -73,7 +73,7 @@ export const displayEnceladusMinerals = async () => {
                 if (singleMineral.id === mineral.mineralId) {
                     if (mineral.load > 0) {
                         facilityMineralsArray.push(
-                            `<input data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Oberon' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
+                            `<input class='radio' data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Oberon' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
                         )
                     }
                 }
@@ -94,7 +94,7 @@ export const displayOberonMinerals = async () => {
                 if (singleMineral.id === mineral.mineralId) {
                     if (mineral.load > 0) {
                         facilityMineralsArray.push(
-                            `<input data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Io' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
+                            `<input class='radio' data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Io' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
                         )
                     }
                 }
@@ -115,7 +115,7 @@ export const displayIoMinerals = async () => {
                 if (singleMineral.id === mineral.mineralId) {
                     if (mineral.load > 0) {
                         facilityMineralsArray.push(
-                            `<input data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Enceladus' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
+                            `<input class='radio' data-type='mineral' name='${mineral.facilityId}' data-load='${mineral.load}' data-facilityMineralId='${mineral.id}' data-id='${singleMineral.id}' data-name=${singleMineral.name} data-facilityname='Enceladus' type='radio' id='${singleMineral.name.toLowerCase()}-input'><div id='${singleMineral.name}'>${mineral.load} tons of ${singleMineral.name}</div><br>`
                         )
                     }
                 }

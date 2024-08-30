@@ -108,12 +108,11 @@ export const purchaseMineral = async () => {
             let matchFound = false
             for (const colonyMineral of allColonyMinerals) {
                 if (facility.mineralId == colonyMineral.mineralId && facility.colonyId == colonyMineral.colonyId && facility.facilityId == colonyMineral.facilityId) {
-                    //If true do nothing
                     matchFound = true
                     break;
                 }
             }
-                if (!matchFound) {
+                if (matchFound === false) {
                     facility.load = 1
                     const postOptions = {
                         method: "POST",
@@ -170,14 +169,16 @@ export const updateFacilityMineralsLoad = async () => {
     }
 }
 export const clearSpaceCart = async () => {
-    let mineralsInCart = document.querySelector('.minerals-in-cart')
-    mineralsInCart.textContent = ''
+    let mineralsInCart = document.querySelectorAll('.minerals-in-cart')
+    mineralsInCart.forEach(element => element.textContent = '')
 }
 
 export const removeChecked = async () => {
-    let facilityMineralId = state.facilityMineralId
-    let mineralRadioButton = document.querySelector(`[data-facilitymineralid="${facilityMineralId}"]`)
-    if (mineralRadioButton) {
-        mineralRadioButton.checked = false
-    }
+    let allRadioButtonElements = document.querySelectorAll('.radio')
+    allRadioButtonElements.forEach(button => button.checked = false)
+    // let facilityMineralId = state.facilityMineralId
+    // let mineralRadioButton = document.querySelector(`[data-facilitymineralid="${facilityMineralId}"]`)
+    // if (mineralRadioButton) {
+    //     mineralRadioButton.checked = false
+    // }
 }
