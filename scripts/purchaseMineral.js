@@ -10,8 +10,6 @@ export const purchaseMineralButton = () => {
 
 const handlePurchaseClick = async (clickEvent) => {
     if (clickEvent.target.id === "purchase") {
-        console.log(state.facilityMineralsTarget)
-        console.log(state)
         if (checkEveryFieldForSelection() === false) {return}
         await purchaseMineral()
         await removeChecked()

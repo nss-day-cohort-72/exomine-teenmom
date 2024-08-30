@@ -6,39 +6,37 @@ export const state = {
     "load": 0,
     "facilityMineralId": 0,
     "mineralName": '',
+    "ganymede": {},
+    "enceladus": {},
+    "oberon": {},
+    "io": {},
 }
 export function setGovernor(governor) {
     state.governor = governor
 }
 export const setFacilityId = (facilityId) => {
     state.facilityId = facilityId
-    console.log(state)
+    console.log(state, ' STATE FROM FACILITY DROPDOWN')
 }
 export const setGovernorId = (governorId) => {
     state.governorId = governorId
-    console.log(state)
 }
 export const setMineralId = (mineralId) => {
     state.mineralId = mineralId
-    console.log(state)
 }
 
 export const setColonyId = (colonyId) => {
     state.colonyId = colonyId
-    console.log(state)
 }
 
 export const setLoad = (load) => {
     state.load = load
-    console.log(state)
 }
 export const setMineralLoad = (load) => {
     state.load = load
-    console.log(state)
 }
 export const setName = (mineralName) => {
     state.mineralName = mineralName
-    console.log(state)
 }
 // export const setMineralAmount = (mineralName, mineralAmount) => {
 //     state[mineralName] = mineralAmount
@@ -46,12 +44,23 @@ export const setName = (mineralName) => {
 // }
 export const setMineralTarget = (mineralTarget) => {
     state.facilityMineralsTarget = mineralTarget
-    console.log(state)
+    console.log(state, ' STATE FROM RADIO BUTTON CLICK')
 }
 
 export const setFacilityMineralId = (facilityMineralId) => {
     state.facilityMineralId = facilityMineralId
-    console.log(state)
+}
+
+export const setFacilityObject = (facilityName) => {
+    let facilityNameToLowerCase = facilityName.toLowerCase()
+    let selectedFacility = state[facilityNameToLowerCase]
+    selectedFacility.colonyId = state.colonyId
+    selectedFacility.mineralId = state.mineralId
+    selectedFacility.facilityId = state.facilityId
+    selectedFacility.load = state.load
+    selectedFacility.mineralName = state.mineralName
+    selectedFacility.governorId = state.governorId
+    console.log(selectedFacility, ' FACILITY OBJECT')
 }
 
 export const purchaseMineral = async () => {
@@ -59,54 +68,81 @@ export const purchaseMineral = async () => {
     let allColonyMinerals = await AllColonyMinerals()
     let chosenFacilityMineral = allFacilityMinerals.find(mineral => mineral.id == state.facilityMineralId)
 
-    let { facilityId, governorId, mineralId, colonyId, load, facilityMineralId, mineralName } = state
+    let { facilityId, governorId, mineralId, colonyId, load, facilityMineralId, mineralName, ganymede, enceladus, oberon, io } = state
     let colonyMineralState = { facilityId, governorId, mineralId, colonyId, load, facilityMineralId, mineralName }
+    let facilityArray = [ganymede, enceladus, oberon, io]
 
-    for (const colonyMineral of allColonyMinerals) {
-        if (colonyMineral.mineralId == colonyMineralState.mineralId && colonyMineral.colonyId == colonyMineralState.colonyId) {
-            colonyMineral.load++
-            const putOptions = {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(colonyMineral)
-            }
-            const putResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyMineral.id}`, putOptions)
+    for (const facility of facilityArray) {
+        if (Object.keys(facility).length !== 0) {
+            let match = allColonyMinerals.find(colonyMineral => colonyMineral.mineralId == facility.mineralId && colonyMineral.colonyId == facility.colonyId && colonyMineral.facilityId == facility.facilityId)
+            if (match) {
+                match.load++
+                //DO PUT OPTIONS HERE
+                const putOptions = {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(match)
+                }
+                console.log('FIRST SET PUT 1')
+                console.log(match.id)
+                const putResponse = await fetch(`http://localhost:8088/colonyMinerals/${match.id}`, putOptions)
 
-            chosenFacilityMineral.load--
-            const putOptions2 = {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(chosenFacilityMineral)
+                chosenFacilityMineral.load--
+                const putOptions2 = {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(chosenFacilityMineral)
+                }
+                console.log('FIRST SET PUT 2')
+                const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)   
             }
-            const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
-            return
         }
     }
-    
-    colonyMineralState.load = 1
-    const postOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(colonyMineralState)
-    }
-    const postResponse = await fetch(`http://localhost:8088/colonyMinerals/`, postOptions)
-
-    chosenFacilityMineral.load--
-    const putOptions2 = {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(chosenFacilityMineral)
-    }
-    const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    for (const facility of facilityArray) {
+        if (Object.keys(facility).length !== 0) {
+            console.log('key length > 0')
+            let matchFound = false
+            for (const colonyMineral of allColonyMinerals) {
+                if (facility.mineralId == colonyMineral.mineralId && facility.colonyId == colonyMineral.colonyId && facility.facilityId == colonyMineral.facilityId) {
+                    //If true do nothing
+                    matchFound = true
+                    break;
+                }
+            }
+                if (!matchFound) {
+                    facility.load = 1
+                    const postOptions = {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(facility)
+                    }
+                    console.log('SECOND SET POST 1')
+                    const postResponse = await fetch(`http://localhost:8088/colonyMinerals/`, postOptions)
+                
+                    chosenFacilityMineral.load--
+                    const putOptions2 = {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(chosenFacilityMineral)
+                    }
+                    console.log('SECOND SET PUT 1')
+                    const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
+                    document.dispatchEvent(new CustomEvent("stateChanged"))
+                }
+            }
+        }
+        state.ganymede = {}
+        state.enceladus = {}
+        state.oberon = {}
+        state.io = {}
 }
 
 const AllFacilityMinerals = async () => {

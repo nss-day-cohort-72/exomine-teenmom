@@ -8,6 +8,7 @@ const facilitiesEventHandler = async (changeEvent) => {
         let selectedFacility = target.options[target.selectedIndex]
         let facilityName = selectedFacility.getAttribute('name')
         let facilityId = selectedFacility.value
+        console.log(facilityName)
         setFacilityId(convertedValue)
         FacilityMineralsHeader(facilityName)
         FacilityMineralsRadioButtons(facilityId, facilityName)
@@ -25,7 +26,6 @@ export const selectFacility = async () => {
             Choose a facility: <select name='facility'>
             <option>Choose a facility</option>
                 ${facilities.map(facility => {
-                    console.log(facility)
                     if (facility.isActive) {
                     return `<option name='${facility.name}' value='${facility.id}'>${facility.name}</option>`
                     }

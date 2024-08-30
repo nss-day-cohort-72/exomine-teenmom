@@ -31,7 +31,7 @@
     {
       "id": 2,
       "name": "Leonard Heathcote",
-      "isActive": false,
+      "isActive": true,
       "colonyId": 2
     },
     {
@@ -43,7 +43,7 @@
     {
       "id": 4,
       "name": "Ramon Boyle",
-      "isActive": false,
+      "isActive": true,
       "colonyId": 1
     },
     {
@@ -76,7 +76,7 @@
     {
       "id": 2,
       "name": "Enceladus",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": 3,
@@ -94,169 +94,96 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "load": 4
+      "load": 26
     },
     {
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "load": 0
+      "load": 88
     },
     {
       "id": 3,
       "mineralId": 3,
       "facilityId": 3,
-      "load": 1
+      "load": 93
     },
     {
       "id": 4,
       "mineralId": 4,
       "facilityId": 1,
-      "load": 0
+      "load": 70
     },
     {
       "id": 5,
       "mineralId": 5,
       "facilityId": 2,
-      "load": 6
+      "load": 94
     },
     {
       "id": 6,
       "mineralId": 2,
       "facilityId": 3,
-      "load": 0
+      "load": 83
     },
     {
       "id": 7,
       "mineralId": 5,
       "facilityId": 1,
-      "load": 0
+      "load": 75
     },
     {
       "id": 8,
       "mineralId": 4,
       "facilityId": 2,
-      "load": 0
+      "load": 98
     },
     {
       "id": 9,
       "mineralId": 1,
       "facilityId": 3,
-      "load": 39
+      "load": 30
     },
     {
       "id": 10,
       "mineralId": 1,
       "facilityId": 4,
-      "load": 42
+      "load": 58
     },
     {
       "id": 11,
       "mineralId": 2,
       "facilityId": 4,
-      "load": 1
+      "load": 68
     }
   ],
   "colonyMinerals": [
     {
-      "facilityId": 1,
-      "governorId": 2,
+      "colonyId": 1,
       "mineralId": 1,
-      "colonyId": 2,
-      "load": 2,
-      "facilityMineralId": 1,
+      "facilityId": 1,
+      "load": 1,
       "mineralName": "Iron",
+      "governorId": 1,
       "id": 1
     },
     {
+      "colonyId": 1,
+      "mineralId": 4,
       "facilityId": 1,
-      "governorId": 3,
-      "mineralId": 1,
-      "colonyId": 3,
-      "load": 1,
-      "facilityMineralId": 1,
-      "mineralName": "Iron",
+      "load": 2,
+      "mineralName": "Silver",
+      "governorId": 1,
       "id": 2
     },
     {
-      "facilityId": 1,
-      "governorId": 3,
-      "mineralId": 4,
-      "colonyId": 3,
-      "load": 1,
-      "facilityMineralId": 4,
-      "mineralName": "Silver",
-      "id": 3
-    },
-    {
-      "facilityId": 1,
-      "governorId": 3,
-      "mineralId": 5,
-      "colonyId": 3,
-      "load": 2,
-      "facilityMineralId": 7,
-      "mineralName": "Platinum",
-      "id": 4
-    },
-    {
-      "facilityId": 2,
-      "governorId": 4,
-      "mineralId": 4,
       "colonyId": 1,
-      "load": 1,
-      "facilityMineralId": 8,
-      "mineralName": "Silver",
-      "id": 5
-    },
-    {
-      "facilityId": 2,
-      "governorId": 2,
-      "mineralId": 2,
-      "colonyId": 2,
-      "load": 3,
-      "facilityMineralId": 2,
-      "mineralName": "Copper",
-      "id": 6
-    },
-    {
-      "facilityId": 1,
-      "governorId": 1,
       "mineralId": 1,
-      "colonyId": 1,
-      "load": 7,
-      "facilityMineralId": 1,
-      "mineralName": "Iron",
-      "id": 7
-    },
-    {
-      "facilityId": 3,
-      "governorId": 1,
-      "mineralId": 2,
-      "colonyId": 1,
-      "load": 1,
-      "facilityMineralId": 6,
-      "mineralName": "Copper",
-      "id": 8
-    },
-    {
       "facilityId": 2,
-      "governorId": 1,
-      "mineralId": 5,
-      "colonyId": 1,
       "load": 3,
-      "facilityMineralId": 5,
-      "mineralName": "Platinum",
-      "id": 9
-    },
-    {
-      "facilityId": 2,
-      "governorId": 5,
-      "mineralId": 5,
-      "colonyId": 2,
-      "load": 1,
-      "facilityMineralId": 5,
-      "mineralName": "Platinum",
-      "id": 10
+      "mineralName": "Iron",
+      "governorId": 1,
+      "id": 3
     }
   ],
   "spaceCarts": []
