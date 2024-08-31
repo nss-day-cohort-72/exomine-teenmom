@@ -94,70 +94,169 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "load": 23
+      "load": 97
     },
     {
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "load": 88
+      "load": 99
     },
     {
       "id": 3,
       "mineralId": 3,
       "facilityId": 3,
-      "load": 89
+      "load": 94
     },
     {
       "id": 4,
       "mineralId": 4,
       "facilityId": 1,
-      "load": 70
+      "load": 98
     },
     {
       "id": 5,
       "mineralId": 5,
       "facilityId": 2,
-      "load": 87
+      "load": 99
     },
     {
       "id": 6,
       "mineralId": 2,
       "facilityId": 3,
-      "load": 78
+      "load": 99
     },
     {
       "id": 7,
       "mineralId": 5,
       "facilityId": 1,
-      "load": 75
+      "load": 99
     },
     {
       "id": 8,
       "mineralId": 4,
       "facilityId": 2,
-      "load": 98
+      "load": 99
     },
     {
       "id": 9,
       "mineralId": 1,
       "facilityId": 3,
-      "load": 28
+      "load": 99
     },
     {
       "id": 10,
       "mineralId": 1,
       "facilityId": 4,
-      "load": 55
+      "load": 97
     },
     {
       "id": 11,
       "mineralId": 2,
       "facilityId": 4,
-      "load": 68
+      "load": 99
     }
   ],
   "colonyMinerals": [
+    {
+      "colonyId": 1,
+      "mineralId": 1,
+      "facilityId": 1,
+      "load": 2,
+      "mineralName": "Iron",
+      "governorId": 1,
+      "id": 1
+    },
+    {
+      "colonyId": 1,
+      "mineralId": 5,
+      "facilityId": 3,
+      "load": 1,
+      "mineralName": "Platinum",
+      "governorId": 1,
+      "id": 2
+    },
+    {
+      "colonyId": 1,
+      "mineralId": 1,
+      "facilityId": 4,
+      "load": 1,
+      "mineralName": "Iron",
+      "governorId": 1,
+      "id": 3
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 1,
+      "facilityId": 1,
+      "load": 2,
+      "mineralName": "Iron",
+      "governorId": 3,
+      "id": 4
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 1,
+      "facilityId": 2,
+      "load": 1,
+      "mineralName": "Iron",
+      "governorId": 3,
+      "id": 5
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 2,
+      "facilityId": 2,
+      "load": 1,
+      "mineralName": "Copper",
+      "governorId": 3,
+      "id": 6
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 5,
+      "facilityId": 3,
+      "load": 1,
+      "mineralName": "Platinum",
+      "governorId": 3,
+      "id": 7
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 3,
+      "facilityId": 4,
+      "load": 1,
+      "mineralName": "Gold",
+      "governorId": 3,
+      "id": 8
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 4,
+      "facilityId": 1,
+      "load": 1,
+      "mineralName": "Silver",
+      "governorId": 3,
+      "id": 9
+    },
+    {
+      "colonyId": 2,
+      "mineralId": 1,
+      "facilityId": 2,
+      "load": 1,
+      "mineralName": "Iron",
+      "governorId": 2,
+      "id": 10
+    },
+    {
+      "colonyId": 1,
+      "mineralId": 3,
+      "facilityId": 4,
+      "load": 1,
+      "mineralName": "Gold",
+      "governorId": 1,
+      "id": 11
+    }
   ],
   "spaceCarts": []
 }

@@ -2,8 +2,6 @@ import { setColonyId, setGovernorId, setGovernor } from "./TransientState.js";
 import { colonyMineralsList } from "./colony.js";
 import { selectFacility } from "./facility.js";
 
-
-
 const governorsEventHandler = async (changeEvent) => {
     let target = changeEvent.target
     if (target.name === 'governor') {

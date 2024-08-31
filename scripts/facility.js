@@ -7,11 +7,9 @@ const facilitiesEventHandler = async (changeEvent) => {
         let convertedValue = parseInt(target.value)
         let selectedFacility = target.options[target.selectedIndex]
         let facilityName = selectedFacility.getAttribute('name')
-        let facilityId = selectedFacility.value
-        console.log(facilityName)
         setFacilityId(convertedValue)
         FacilityMineralsHeader(facilityName)
-        FacilityMineralsRadioButtons(facilityId, facilityName)
+        FacilityMineralsRadioButtons(facilityName)
     }
 }
 

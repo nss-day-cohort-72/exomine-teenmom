@@ -1,7 +1,5 @@
 import { selectGovernor } from "./governor.js"
-import { selectFacility } from "./facility.js"
 import { purchaseMineralButton } from "./purchaseMineral.js"
-import { colonyMineralsList } from "./colony.js"
 import { displayGanymedeMinerals, displayEnceladusMinerals, displayOberonMinerals, displayIoMinerals } from "./mineral.js"
 
 export const marketplace = async () => {

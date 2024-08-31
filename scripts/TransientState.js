@@ -38,10 +38,7 @@ export const setMineralLoad = (load) => {
 export const setName = (mineralName) => {
     state.mineralName = mineralName
 }
-// export const setMineralAmount = (mineralName, mineralAmount) => {
-//     state[mineralName] = mineralAmount
-//     console.log(state)
-// }
+
 export const setMineralTarget = (mineralTarget) => {
     state.facilityMineralsTarget = mineralTarget
     console.log(state, ' STATE FROM RADIO BUTTON CLICK')
@@ -85,8 +82,6 @@ export const purchaseMineral = async () => {
                     },
                     body: JSON.stringify(match)
                 }
-                console.log('FIRST SET PUT 1')
-                console.log(match.id)
                 const putResponse = await fetch(`http://localhost:8088/colonyMinerals/${match.id}`, putOptions)
 
                 chosenFacilityMineral.load--
@@ -97,14 +92,12 @@ export const purchaseMineral = async () => {
                     },
                     body: JSON.stringify(chosenFacilityMineral)
                 }
-                console.log('FIRST SET PUT 2')
                 const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)   
             }
         }
     }
     for (const facility of facilityArray) {
         if (Object.keys(facility).length !== 0) {
-            console.log('key length > 0')
             let matchFound = false
             for (const colonyMineral of allColonyMinerals) {
                 if (facility.mineralId == colonyMineral.mineralId && facility.colonyId == colonyMineral.colonyId && facility.facilityId == colonyMineral.facilityId) {
@@ -121,10 +114,10 @@ export const purchaseMineral = async () => {
                         },
                         body: JSON.stringify(facility)
                     }
-                    console.log('SECOND SET POST 1')
-                    const postResponse = await fetch(`http://localhost:8088/colonyMinerals/`, postOptions)
-                
+
+                    await fetch(`http://localhost:8088/colonyMinerals/`, postOptions)
                     chosenFacilityMineral.load--
+
                     const putOptions2 = {
                         method: "PUT",
                         headers: {
@@ -132,8 +125,8 @@ export const purchaseMineral = async () => {
                         },
                         body: JSON.stringify(chosenFacilityMineral)
                     }
-                    console.log('SECOND SET PUT 1')
-                    const putResponse2 = await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
+                    
+                    await fetch(`http://localhost:8088/facilityMinerals/${chosenFacilityMineral.id}`, putOptions2)
                     document.dispatchEvent(new CustomEvent("stateChanged"))
                 }
             }
@@ -144,15 +137,20 @@ export const purchaseMineral = async () => {
         state.io = {}
 }
 
-const AllFacilityMinerals = async () => {
+export const AllFacilityMinerals = async () => {
     const response = await fetch("http://localhost:8088/facilityMinerals")
     const facilityMinerals = await response.json()
     return facilityMinerals
 }
-const AllColonyMinerals = async () => {
+export const AllColonyMinerals = async () => {
     const response = await fetch("http://localhost:8088/colonyMinerals")
     const colonyMinerals = await response.json()
     return colonyMinerals
+}
+export const AllSingleMinerals = async () => {
+    const response = await fetch("http://localhost:8088/minerals")
+    const singleMinerals = await response.json()
+    return singleMinerals
 }
 
 export const updateFacilityMineralsLoad = async () => {
