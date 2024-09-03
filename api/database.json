@@ -94,7 +94,7 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "load": 23
+      "load": 20
     },
     {
       "id": 2,
@@ -130,7 +130,7 @@
       "id": 7,
       "mineralId": 5,
       "facilityId": 1,
-      "load": 75
+      "load": 74
     },
     {
       "id": 8,
@@ -148,13 +148,13 @@
       "id": 10,
       "mineralId": 1,
       "facilityId": 4,
-      "load": 55
+      "load": 46
     },
     {
       "id": 11,
       "mineralId": 2,
       "facilityId": 4,
-      "load": 68
+      "load": 66
     }
   ],
   "colonyMinerals": [

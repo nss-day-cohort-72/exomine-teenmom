@@ -74,7 +74,7 @@ export const purchaseMineral = async () => {
 
     for (const facility of facilityArray) {
         if (Object.keys(facility).length !== 0) {
-            let match = allColonyMinerals.find(colonyMineral => colonyMineral.mineralId == facility.mineralId && colonyMineral.colonyId == facility.colonyId && colonyMineral.facilityId == facility.facilityId)
+            let match = allColonyMinerals.find(colonyMineral => colonyMineral.mineralId == facility.mineralId && colonyMineral.colonyId == facility.colonyId)
             if (match) {
                 match.load++
                 //DO PUT OPTIONS HERE
@@ -107,7 +107,7 @@ export const purchaseMineral = async () => {
             console.log('key length > 0')
             let matchFound = false
             for (const colonyMineral of allColonyMinerals) {
-                if (facility.mineralId == colonyMineral.mineralId && facility.colonyId == colonyMineral.colonyId && facility.facilityId == colonyMineral.facilityId) {
+                if (facility.mineralId == colonyMineral.mineralId && facility.colonyId == colonyMineral.colonyId) {
                     matchFound = true
                     break;
                 }
