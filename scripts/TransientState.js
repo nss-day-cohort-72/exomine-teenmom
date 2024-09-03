@@ -156,10 +156,10 @@ const AllColonyMinerals = async () => {
 }
 
 export const updateFacilityMineralsLoad = async () => {
-    let facilityMineralId = state.facilityMineralId
+    let facilityMineralId = state.facilityMineralId //2
     let allFacilityMinerals = await AllFacilityMinerals()
     let selectedMineral = allFacilityMinerals.find(mineral => mineral.id == facilityMineralId)
-    let facilityMineralElement = document.getElementById(state.mineralName)
+    let facilityMineralElement = document.getElementById(`${state.mineralName}-${state.facilityId}`)
     let facilityInputElement = document.getElementById(`${state.mineralName.toLowerCase()}-input`)
     if (selectedMineral.load > 0) {
         facilityMineralElement.textContent =  `${selectedMineral.load} tons of ${state.mineralName}`

@@ -33,9 +33,9 @@ export const marketplace = async () => {
             <article class='facility-minerals'>
                 <h2 id='facilityMineralsHeading'>(choose a facility)</h2>
                 <section class='ganymede-radio-buttons hide-element'>${ganymedeMinerals}</section>
-                <section class='oberon-radio-buttons hide-element'>${enceladusMinerals}</section>
-                <section class='io-radio-buttons hide-element'>${oberonMinerals}</section>
-                <section class='enceladus-radio-buttons hide-element'>${ioMinerals}</section>
+                <section class='enceladus-radio-buttons hide-element'>${enceladusMinerals}</section>
+                <section class='oberon-radio-buttons hide-element'>${oberonMinerals}</section>
+                <section class='io-radio-buttons hide-element'>${ioMinerals}</section>
             </article>
 
             <article class="space-cart">
